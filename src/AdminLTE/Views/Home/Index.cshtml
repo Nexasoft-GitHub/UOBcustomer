@@ -1,0 +1,311 @@
+﻿<environment names="Development">
+    <link rel="stylesheet" href="~/lib/datatables/media/css/dataTables.bootstrap.css" asp-append-version="true" />
+</environment>
+<environment names="Staging,Production">
+    <link rel="stylesheet" href="~/lib/datatables/media/css/dataTables.bootstrap.min.css" asp-append-version="true" />
+</environment>
+
+<environment names="Development">
+    <script src="~/lib/datatables/media/js/jquery.dataTables.js" asp-append-version="true"></script>
+    <script src="~/lib/datatables/media/js/dataTables.bootstrap.js" asp-append-version="true"></script>
+</environment>
+<environment names="Staging,Production">
+    <script src="~/lib/datatables/media/js/jquery.dataTables.min.js" asp-append-version="true"></script>
+    <script src="~/lib/datatables/media/js/dataTables.bootstrap.min.js" asp-append-version="true"></script>
+</environment>
+
+<style>/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}</style>
+
+<div style="text-align:center;margin:0 auto">
+    @*<div style="background-color:#07277b">
+                <i class="fa fa-dashboard" style="font-size:24px;color:white"></i><br />
+            <strong><p style="font-size:18px; color:white">BONUS</p></strong>
+        </div>*@
+    <br />
+    <div style="padding:10px;width:80%; border-radius:5px;margin:0 auto;background:#fff;box-shadow:5px 5px #dfdfdf">
+
+        <div>
+            <div>
+                <img src="/images/icon_heart_sm.png" alt="adminlte" style="padding:4px; height: 40px;">
+                <img src="/images/uob-logo_small.png" alt="adminlte" style="padding:4px; height: 30px">
+                <img src="/images/button_inbox.png" alt="adminlte" style="padding:4px; height: 50px">
+            </div>
+
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+            <img src="/images/logo_bonusblast_.png" alt="adminlte" style="padding:5px; height: 80px">
+            <div>&nbsp;</div>
+
+            <p style="font-size:20px; color:darkblue">Welcome, Vera Kwan!</p>
+
+            <div style="width:100%;margin:0 auto; padding-top:10px">
+                <img src="/images/sample_banner_1.png" alt="adminlte" style="height: 100px;">
+            </div>
+            <div>&nbsp;</div>
+
+            <div style="width:100%;margin:0 auto; padding-top:10px">
+                <p style="font-size:18px;background:#07277b;color:white">Play</p>
+
+            </div>
+
+
+        </div>
+        <div style="width:100%;margin:0 auto; padding-top:10px">
+            <p style="font-size:18px;background:#07277b;color:white">Play</p>
+
+        </div>
+
+
+        @*<div class="row">
+            <div class="column" style="background-color:#e53a3a">
+                <p class="fa fa-users" style="color:white"><strong> No of Customer</strong></p>
+                <p style="color:white">3000</p>
+            </div>
+
+            <div class="column" style="background-color:#316aaa">
+                <p class="fa fa-user" style="color:white"><strong> Active Users</strong></p>
+                <p style="color:white">1500</p>
+            </div>
+
+            <div class="column" style="background-color:#808080">
+                <p class="fa fa-gift" style="color:white"><strong> Rewards</strong></p>
+                <p style="color:white">20</p>
+            </div>
+        </div>*@
+
+
+        <div>&nbsp;</div>
+        @*<div style="padding:10px;width:80%; border-radius:5px;margin:0 auto;background:#fff; box-shadow:5px 5px #dfdfdf">
+            <p style="font-size:18px;background:#07277b;color:white">Monthly</p>
+            <div style="display:inline-block;padding:10px;text-align:left;width:15%">
+
+            </div>
+            <div style="display:inline-block;padding:10px;text-align:right;width:15%">
+
+            </div>
+            <div style="display:inline-block;padding:10px;text-align:right;width:15%">
+
+            </div>
+            <div style="display:inline-block;padding:10px;text-align:right;width:15%">
+                <p>&nbsp;</p>
+            </div>
+            <div style="display:inline-block;padding:10px;text-align:left;width:15%">
+
+            </div>
+            <div style="display:inline-block;padding:10px;text-align:right;width:15%">
+
+            </div>
+            <div style="display:inline-block;width:40%;margin:0 auto;">
+                <canvas id="merchandise" height="100"></canvas>
+                <p>User</p>
+                <script>
+                    var data = {
+                        datasets: [
+                            {
+                                data: [60, 10],
+                                backgroundColor: [
+                                    "#ffc03f"
+                                ]
+                            }]
+                    };
+
+                    var chart = new Chart(document.getElementById('merchandise'), {
+                        type: 'doughnut',
+                        data: data,
+                        plugins: [{
+                            beforeDraw: function (chart) {
+                                var width = chart.chart.width,
+                                    height = chart.chart.height,
+                                    ctx = chart.chart.ctx;
+
+                                ctx.restore();
+                                var fontSize = (height / 114).toFixed(2);
+                                ctx.font = fontSize + "em sans-serif";
+                                ctx.textBaseline = "middle";
+
+                                var text = "90%",
+                                    textX = Math.round((width - ctx.measureText(text).width) / 2),
+                                    textY = height / 2;
+
+                                ctx.fillText(text, textX, textY);
+                                ctx.save();
+                            }
+                        }],
+                        options: {
+                            responsive: true,
+                            legend: {
+                                display: false
+                            }
+                        }
+                    });
+                </script>
+            </div>
+            <div style="display:inline-block;width:40%;margin:0 auto;">
+                <canvas id="taskcomplete" height="100"></canvas>
+                <p>User<br />Active</p>
+                <script>
+                    var data = {
+                        datasets: [
+                            {
+                                data: [75, 25],
+                                backgroundColor: [
+                                    "#ff654b"
+                                ]
+                            }]
+                    };
+
+                    var chart = new Chart(document.getElementById('taskcomplete'), {
+                        type: 'doughnut',
+                        data: data,
+                        plugins: [{
+                            beforeDraw: function (chart) {
+                                var width = chart.chart.width,
+                                    height = chart.chart.height,
+                                    ctx = chart.chart.ctx;
+
+                                ctx.restore();
+                                var fontSize = (height / 114).toFixed(2);
+                                ctx.font = fontSize + "em sans-serif";
+                                ctx.textBaseline = "middle";
+
+                                var text = "75%",
+                                    textX = Math.round((width - ctx.measureText(text).width) / 2),
+                                    textY = height / 2;
+
+                                ctx.fillText(text, textX, textY);
+                                ctx.save();
+                            }
+                        }],
+                        options: {
+                            responsive: true,
+                            legend: {
+                                display: false
+                            }
+                        }
+                    });
+                </script>
+            </div>
+
+
+        </div>*@
+    </div>
+
+    <div>&nbsp;</div>
+    @*<div style="padding:10px;width:80%; border-radius:5px;margin:0 auto;background:#fff; box-shadow:5px 5px #dfdfdf">
+        <div style="width:100%;margin:0 auto; padding-top:10px">
+            <p style="font-size:18px;background:#07277b;color:white">Play</p>
+
+            @*<canvas id="myChart" height="50"></canvas>
+                <script>
+                    var ctx = document.getElementById("myChart");
+                    var myChart = new Chart(ctx, {
+                        type: 'line',
+                        data: {
+                            labels: ["June 2018", "July 2018", "August 2018", "September 2018", "October 2018"],
+                            datasets: [{
+                                label: 'Monthly Active Users',
+                                data: [200, 215, 233, 301, 250],
+                                backgroundColor: [
+                                    'rgba(184, 241, 249, 0.7)'
+                                ],
+                                borderColor: [
+                                    'rgba(184, 241, 249,1)'
+                                ],
+                            }]
+                        }
+                    });
+                </script>
+        </div>
+    </div>*@
+</div>
+
+    @*
+        <div class="box">
+                <div class="box-body table-responsive">
+                    <table class="table table-bordered table-hover" id="TableId" cellspacing="0" align="center">
+                        <thead>
+                            <tr>
+                                <th>Sr</th>
+                                <th>Order Track Number</th>
+                                <th>Quantity</th>
+                                <th>Product Name</th>
+                                <th>Special Offer</th>
+                                <th>Unit Price</th>
+                                <th>Unit Price Discount</th>
+                                <th>Options</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="box-body">
+                    <form asp-controller="Home" asp-action="Index" method="post">
+                        <button class="btn btn-sm btn-primary" type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+
+            <script>
+                $(document).ready(function () {
+                    $('#TableId').DataTable(
+                    {
+                        searchDelay: 500,
+                        "columnDefs": [
+                            { "width": "5%", "targets": [0] },
+                            { "className": "text-center", "targets": [0, 1, 2, 3, 4, 5, 6] },
+                            { "defaultContent": "<button class='btn btn-primary btn-sm'>Details</button>", "targets": [7] },
+                            { "searchable": false, "targets": [0,2,4,5,6] },
+                            { "render": function (data, type, row) {
+                                        return ' <label class="label label-primary">' + data + '</label>';},
+                              "targets": [4] },
+                            { "render": function (data, type, row) {
+                                    if (row['quantity'] > 1)
+                                        return ' <label class="label label-success">' + row['quantity'] + '</label>'
+                                    else
+                                        return ' <label class="label label-default">' + row['quantity'] + '</label>';},
+                               "targets": [2]},
+                        ],
+                        "language":
+                            {
+                                "processing": "<div class=''><i class='fa fa-cog fa-spin site-loader-color'></i></div>",
+                                "search": "filter",
+                                "searchPlaceholder": "track num or product"
+                            },
+                        "processing": true,
+                        "serverSide": true,
+                        "ajax":
+                            {
+                                "url": "/Home/GetData",
+                                "type": "POST",
+                                "dataType": "JSON"
+                            },
+                        "columns": [
+                                    { "data": "sr" },
+                                    { "data": "ordertracknumber" },
+                                    { "data": "quantity" },
+                                    { "data": "productname" },
+                                    { "data": "specialoffer" },
+                                    { "data": "unitprice" },
+                                    { "data": "unitpricediscount" },
+                        ],
+                        "dom": "<'row'<'col-sm-6'l><'col-sm-6'<'#buttonContainer.site-datatable-button-container'>f>>" + "<'row'<'col-sm-12'tr>>" + "<'row'<'col-sm-5'i><'col-sm-7'p>>",
+                    });
+
+                    $("#buttonContainer").addClass("pull-right").append("<button class='btn btn-sm bg-olive'>Create</button>");
+
+                });
+            </script>*@

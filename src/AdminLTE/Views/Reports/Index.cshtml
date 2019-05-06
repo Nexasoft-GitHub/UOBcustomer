@@ -1,0 +1,62 @@
+﻿<environment names="Development">
+    <link rel="stylesheet" href="~/lib/datatables/media/css/dataTables.bootstrap.css" asp-append-version="true"/>
+</environment>
+<environment names="Staging,Production">
+    <link rel="stylesheet" href="~/lib/datatables/media/css/dataTables.bootstrap.min.css" asp-append-version="true" />
+</environment>
+
+<environment names="Development">
+    <script src="~/lib/datatables/media/js/jquery.dataTables.js" asp-append-version="true"></script>
+    <script src="~/lib/datatables/media/js/dataTables.bootstrap.js" asp-append-version="true"></script>
+</environment>
+<environment names="Staging,Production">
+    <script src="~/lib/datatables/media/js/jquery.dataTables.min.js" asp-append-version="true"></script>
+    <script src="~/lib/datatables/media/js/dataTables.bootstrap.min.js" asp-append-version="true"></script>
+</environment>
+
+<div style="text-align:center;margin:0 auto">
+    <i class="fa fa-user" style="font-size:24px"></i><br />
+    <strong style="font-size:18px">PROFILE</strong>
+    @*<p style="color:#9096ae">Merchandiser Report</p>*@
+    
+    <div style="padding:10px;width:90%; border-radius:5px;margin:0 auto;background:#fff;border-bottom:solid 5px #ffc03d; box-shadow:5px 5px #dfdfdf">
+        <div style="display:inline-block;padding:10px;text-align:center;width:20%">
+            <p>Timestamp</p>
+            <p><strong>@DateTime.Now.ToString()</strong></p>
+            <div>
+                <div style="display:inline-block"><p>Details<br />Name: <strong>Hafiz Salleh</strong></p></div>
+                <div style="display:inline-block"><img src="~/images/merchandiser.png" /></div>
+            </div>
+
+            <div style="font-family: Verdana ; font-size: 22; text-align: center">
+                <header>
+                    <h2 class="fa fa-trophy" style="color: gray;font-size:24px">Tier - 4    </h2>
+                </header>
+
+                <progress value="80" max="100"></progress>
+            </div>
+
+        </div>
+        <div style="display:inline-block;padding:10px;text-align:left;width:15%">
+            <p>3, Jalan Aerobik 13/43</p>
+            <p>40100 Shah Alam</p>
+        </div>
+        <div style="display:inline-block;padding:10px;text-align:right;width:15%">
+            <p>012-6678545</p>
+            <p>Selangor</p>
+        </div>
+
+
+    </div>
+    <div>&nbsp;</div>
+    
+    
+    <div>&nbsp;</div>
+    <div style="padding:10px;width:90%; border-radius:5px;margin:0 auto;background:#fff; box-shadow:5px 5px #dfdfdf">
+
+        @*<a class="btn btn-primary" asp-controller="Sampling" asp-action="Index">Retry</a>*@
+        <a class="btn btn-primary" asp-controller="Sampling" asp-action="Index"><i class="fa fa-play-circle" aria-hidden="true"></i>   Play</a>
+        <a class="btn btn-primary" asp-controller="Tasks" asp-action="Index"><i class="fa fa-gift" aria-hidden="true"></i>   Rewards</a>
+
+    </div>
+</div>
